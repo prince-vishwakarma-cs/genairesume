@@ -11,6 +11,7 @@ const app = express();
 dotenv.config({ path: ".env" });
 
 const mongo_uri = process.env.MONGO_URI;
+const port = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(cors());
@@ -27,6 +28,7 @@ app.get("/", (req, res) => {
 });
 
 app.use(errorMiddleware);
-app.listen(4000, () => {
+
+app.listen(port, () => {
   console.log("Server is working");
 });
