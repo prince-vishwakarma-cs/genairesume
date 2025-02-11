@@ -17,7 +17,7 @@ const formatDate = (dateStr) => {
   return formattedDate === todayFormatted ? "Present" : formattedDate;
 };
 
-import { chromium } from 'playwright';
+import {chromium} from "playwright"
 
 const export_resume = async (resumeId, res) => {
   try {
