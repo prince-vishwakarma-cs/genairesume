@@ -22,7 +22,10 @@ const export_resume = async (resumeId, res) => {
     const resume = await Resume.findById(resumeId);
     if (!resume) return res.status(404).json({ message: "Resume not found" });
 
-    const browser = await puppeteer.launch({ headless: true });
+    const browser = await puppeteer.launch({
+      executablePath: '/opt/render/.cache/puppeteer/chrome/linux-133.0.6943.53/chrome',
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    });
     const page = await browser.newPage();
 
     const htmlContent = `
