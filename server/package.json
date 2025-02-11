@@ -4,7 +4,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "postinstall": "npx playwright install",
+    "postinstall": "PLAYWRIGHT_BROWSERS_PATH=0 npx playwright install",
     "dev": "nodemon app.js",
     "start": "node app.js"
   },
