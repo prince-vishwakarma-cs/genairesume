@@ -24,7 +24,11 @@ const App = () => {
     const newData = { ...formData };
 
     if (section) {
-      newData[section][index][field] = e.target.value;
+      if(section==="contact" || section==="phone"){
+        newData.contact[field] = e.target.value;
+      }else{
+        newData[section][index][field] = e.target.value;
+      }
     } else {
       newData[e.target.name] = e.target.value;
     }
