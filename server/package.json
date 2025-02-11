@@ -4,7 +4,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "postinstall": "apt-get update && apt-get install -y chromium",
+    "postinstall": "npx puppeteer install",
     "dev": "nodemon app.js",
     "start": "node app.js"
   },

@@ -23,7 +23,7 @@ const export_resume = async (resumeId, res) => {
     if (!resume) return res.status(404).json({ message: "Resume not found" });
 
     const browser = await puppeteer.launch({
-      executablePath: '/usr/bin/chromium',
+      headless: "new",
       args: ['--no-sandbox', '--disable-setuid-sandbox'],
     });
 
